@@ -1,14 +1,6 @@
 # typedahead-states
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+This is the mini project for my internship.
 
 ## Project Setup
 
@@ -16,10 +8,16 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Compile and Hot-Reload for the Front end Dev
 
 ```sh
 npm run dev
+```
+
+### Start the Back end Dev
+
+```sh
+node server.js
 ```
 
 ### Compile and Minify for Production
