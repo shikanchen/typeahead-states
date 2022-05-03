@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/src/style.css" />
     <title>Typeahead States</title>
   </head>
   <body>
@@ -11,13 +12,29 @@
       <p><strong>Selected State: </strong>{{ keyword }}</p>
       <input class="form-control typeahead" type="text" placeholder="States of USA" :value="keyword" @keyup="queryForStates">
       <ul class="list-group">
-        <li class="list-group-item" v-for="state in states" :key="state.id" @click="completeState(state.name)">
+        <li class="list-group-item" v-for="state in states" :key="state.name" @click="completeState(state.name)">
           <a class="text-decoration-none" href="#">{{ state.name }}</a>
         </li>
       </ul>
     </div>
+    <div id="map"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script>
+      var geocoder;
+      var map;
+      function initialize() {
+        geocoder = new google.maps.Geocoder();
+        var latlng = new google.maps.LatLng(48, -110);
+        var mapOptions = {
+          zoom: 4,
+          center: latlng
+        }
+        map = new google.maps.Map(document.getElementById('map'), mapOptions);
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSI8-oog-egSt5JPfso6htooB3VS2oi2Q&callback=initialize"></script>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
