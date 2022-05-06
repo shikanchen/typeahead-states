@@ -1,4 +1,4 @@
-# typedahead-states
+# typeahead-states
 
 This is the mini project for my internship.
 
